@@ -103,6 +103,9 @@ set_environment
 # Initializes the Database
 paster --plugin=ckan db init -c "${CKAN_CONFIG}/ckan.ini"
 
+# TEST Inizialize Ldap plugin: create the organisation specified in ckanext.ldap.organization.id 
+paster --plugin=ckanext-ldap ldap setup-org -c "${CKAN_CONFIG}/ckan.ini"
+
 # Initialize Harvest Database
 paster --plugin=ckanext-harvest harvester initdb -c "${CKAN_CONFIG}/ckan.ini"
 

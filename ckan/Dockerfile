@@ -14,7 +14,10 @@ RUN apt-get -q -y update && apt-get -q -y upgrade && DEBIAN_FRONTEND=noninteract
         python-pip \
         python-virtualenv \
         libpq-dev \
-        git-core \
+	libldap2-dev \
+	libsasl2-dev \
+	libssl-dev \        
+	git-core \
 	sudo \
 	&& apt-get -q clean
 
