@@ -85,6 +85,13 @@ ADD ./ckanext-dcatapit/ $CKAN_HOME/src/ckanext-dcatapit/
 RUN . /usr/lib/ckan/default/bin/activate 
 RUN pip install -e $CKAN_HOME/src/ckanext-dcatapit/ 
 
+# TEST Install ckanext-ldap
+RUN mkdir $CKAN_HOME/src/ckanext-ldap/
+ADD ./ckanext-ldap/ $CKAN_HOME/src/ckanext-ldap/
+RUN . /usr/lib/ckan/default/bin/activate
+RUN pip install -e $CKAN_HOME/src/ckanext-ldap/
+RUN pip install -r $CKAN_HOME/src/ckanext-ldap/requirements.txt
+
 #RUN pip install -r $CKAN_HOME/src/ckanext-dcatapit/dev-requirements.txt
 RUN . /usr/lib/ckan/default/bin/activate
 
